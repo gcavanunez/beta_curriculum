@@ -5,7 +5,8 @@ Mix.install([
   {:youtube, github: "brooklinjazz/youtube"},
   {:hidden_cell, github: "brooklinjazz/hidden_cell"},
   {:visual, github: "brooklinjazz/visual"},
-  {:smart_animation, github: "brooklinjazz/smart_animation"}
+  {:smart_animation, github: "brooklinjazz/smart_animation"},
+  {:kino, "~> 0.7.0", override: true}
 ])
 ```
 
@@ -75,10 +76,8 @@ in Elixir are unbounded, meaning they have no maximum size.
 Contrast that with a language like JavaScript which has a maximum safe integer size of `9007199254740991`.
 Elixir makes that look tiny!
 
-<!-- livebook:{"attrs":{"code":"biggest_integer = 1","source":"Kino.Markdown.new(~s(\ninteger: #{biggest_integer}\\n\ndigits: #{biggest_integer |> Integer.digits() |> Enum.count()}\n))","title":"Biggest Integer Visual"},"kind":"Elixir.Visual","livebook_object":"smart_cell"} -->
-
 ```elixir
-biggest_integer = 1
+biggest_integer = 90_071_992_547_409_912
 Kino.Markdown.new(~s(
 integer: #{biggest_integer}\n
 digits: #{biggest_integer |> Integer.digits() |> Enum.count()}
@@ -144,10 +143,10 @@ For example, you might want to represent a progress bar as a percentage.
 In the Elixir cell below, try changing the float `percentage` to any float between `0.0` and `100.0`
 and see how the loading bar changes! Replace `50.0` with your answer and reevaluate the cell.
 
-<!-- livebook:{"attrs":{"code":"percentage = 50.0","source":"Kino.Markdown.new(~s(\n  <div style=\\\"height: 20px; width: 100%; background-color: grey\\\">\n  <div style=\\\"height: 20px; width: #{percentage}%; background-color: green; color: white;\\\">#{percentage}%</div>\n  </div>\n))","title":"Loading Bar Visual"},"kind":"Elixir.Visual","livebook_object":"smart_cell"} -->
+<!-- livebook:{"attrs":{"code":"percentage = 70.0","source":"Kino.Markdown.new(~s(\n  <div style=\\\"height: 20px; width: 100%; background-color: grey\\\">\n  <div style=\\\"height: 20px; width: #{percentage}%; background-color: green; color: white;\\\">#{percentage}%</div>\n  </div>\n))","title":true},"kind":"Elixir.Visual","livebook_object":"smart_cell"} -->
 
 ```elixir
-percentage = 50.0
+percentage = 70.0
 Kino.Markdown.new(~s(
   <div style=\"height: 20px; width: 100%; background-color: grey\">
   <div style=\"height: 20px; width: #{percentage}%; background-color: green; color: white;\">#{percentage}%</div>
@@ -193,7 +192,7 @@ provide utilities for working with money.
 In the Elixir cell below, enter some floating-point addition that returns an unexpected result.
 
 ```elixir
-
+1.1 + 1.3
 ```
 
 ## Arithmetic Operators
@@ -259,7 +258,7 @@ to write code like this, but it's useful to know you can.
 In the Elixir cell below, add two massive numbers together that you couldn't do in your head.
 
 ```elixir
-
+12_341_512_341_238 + 91_234_123_412_342
 ```
 
 ## Subtraction
@@ -297,7 +296,7 @@ Subtracting a negative is the same as adding a positive.
 In the Elixir cell below, subtract two massive numbers together.
 
 ```elixir
-
+1_234_123_412_341_234 - 12_341_234_123_412_340
 ```
 
 ## Multiplication
@@ -326,7 +325,7 @@ You can multiply integers and floats both positive and negative in combination, 
 In the Elixir cell below, multiply two massive numbers together.
 
 ```elixir
-
+123 * 321
 ```
 
 ## Division
@@ -374,7 +373,7 @@ should be close to `3.14`.
 Divide `100` by `3` using `div`. Your answer should be `33`.
 
 ```elixir
-
+div(100, 3)
 ```
 
 ## Exponents
@@ -410,7 +409,7 @@ In the Elixir cell below, Use the `**` operator to determine `10` to the power o
 </details>
 
 ```elixir
-
+10 ** 214
 ```
 
 ## BEDMAS
@@ -579,7 +578,7 @@ rem(10, 3)
 Enter your solution below.
 
 ```elixir
-
+rem(10, 3)
 ```
 
 ## Commit Your Progress
